@@ -1,0 +1,8 @@
+hyperion for Ubuntu
+-------------------
+
+The debian package follows FHS instead of installing everything to /opt:
+* configuration directory: /etc/hyperion
+* effects: /usr/share/hyperion/effects
+
+ -- Guido S. Nickels <gsn@kernel-oops.eu>  Sat, 04 Jun 2016 09:06:30 +0200

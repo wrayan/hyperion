@@ -1,0 +1,5 @@
+#!/usr/bin/dh-exec
+bin/service/hyperion.init.sh => /etc/init.d/hyperion
+bin/service/hyperion.initctl.sh => /etc/init/hyperion.conf
+bin/service/hyperion.systemd.sh => /lib/systemd/system/hyperion.service
+effects/* /usr/share/hyperion/effects

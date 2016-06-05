@@ -1,0 +1,49 @@
+From: "Guido S. Nickels" <gsn@kernel-oops.de>
+Date: Sun, 5 Jun 2016 08:40:56 +0200
+Subject: initscripts
+
+* change config path to /etc/hyperion
+* change binary path to /usr/bin
+---
+ bin/service/hyperion.init.sh    | 2 +-
+ bin/service/hyperion.initctl.sh | 2 +-
+ bin/service/hyperion.systemd.sh | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/bin/service/hyperion.init.sh b/bin/service/hyperion.init.sh
+index 3ed78f5..5911557 100644
+--- a/bin/service/hyperion.init.sh
++++ b/bin/service/hyperion.init.sh
+@@ -13,7 +13,7 @@
+ ### END INIT INFO
+ 
+ DAEMON=hyperiond
+-DAEMONOPTS="/opt/hyperion/config/hyperion.config.json"
++DAEMONOPTS="/etc/hyperion/hyperion.config.json"
+ DAEMON_PATH="/usr/bin"
+ 
+ NAME=$DAEMON
+diff --git a/bin/service/hyperion.initctl.sh b/bin/service/hyperion.initctl.sh
+index 58f6f79..86ef592 100644
+--- a/bin/service/hyperion.initctl.sh
++++ b/bin/service/hyperion.initctl.sh
+@@ -8,4 +8,4 @@ stop on (runlevel [!2345])
+ 
+ respawn
+ 
+-exec /usr/bin/hyperiond /opt/hyperion/config/hyperion.config.json
+\ No newline at end of file
++exec /usr/bin/hyperiond /etc/hyperion/hyperion.config.json
+diff --git a/bin/service/hyperion.systemd.sh b/bin/service/hyperion.systemd.sh
+index b3503c7..1ec4124 100644
+--- a/bin/service/hyperion.systemd.sh
++++ b/bin/service/hyperion.systemd.sh
+@@ -6,7 +6,7 @@ Type=simple
+ User=root
+ Group=root
+ UMask=007
+-ExecStart=/opt/hyperion/bin/hyperiond /opt/hyperion/config/hyperion.config.json
++ExecStart=/usr/bin/hyperiond /etc/hyperion/hyperion.config.json
+ ExecReload=/bin/kill -HUP $MAINPID
+ Restart=on-failure
+ TimeoutStopSec=10
