@@ -1,3 +1,9 @@
+hyperion (1.0git20160505.7.21a4f0c-ko2) xenial; urgency=medium
+
+  * updated copyright information, removed unneeded stuff from install scripts
+
+ -- Guido S. Nickels <gsn@kernel-oops.de>  Tue, 07 Jun 2016 22:35:26 +0200
+
 hyperion (1.0git20160505.7.21a4f0c-ko1) xenial; urgency=medium
 
   * Initial release
